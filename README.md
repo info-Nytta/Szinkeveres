@@ -1,1 +1,3 @@
 # szinek
+
+Gyakorló feladat
