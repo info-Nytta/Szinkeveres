@@ -1,0 +1,39 @@
+html {
+	background-color:gray }
+body { 
+	box-sizing:border-box;
+	max-width:1000px;
+	margin:auto;
+	background-color:white;
+	padding: 10px;}
+h1, h2, h3 {
+	text-align:center }
+section {
+	margin:50px auto }
+table#szinskala { 
+	margin:auto;
+	border-collapse: collapse}
+table#szinskala td {
+	width:15px;
+	height:15px }
+div#szinminta {
+	border-radius: 10px;
+	height:100px;
+	width:300px;
+	margin:30px auto;
+	padding: 50px}
+div#szinkeveres {
+	max-width:800px;
+	margin:auto;
+	overflow: auto }
+div.csuszka {
+	width:33.33%;
+	text-align:center;
+	font-weight:bold;
+	float:left }
+.red {
+	color:red }
+.green {
+	color:green }
+.blue {
+	color:blue }

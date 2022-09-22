@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html id='top'>
+<head >
+	<meta lang='hu-hu' charset='utf-8' />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<link rel='stylesheet' href='szinek.css' />
+	<script type='text/javascript' src='szinek.js'></script>
+	<title>Színek</title>
+	<style>#design{font-size:80%;text-align:center;font-style:italic;font-family:Serif;margin:25px auto}</style>
+</head>
+<body>
+	<header>
+		<h1>Színek</h1>
+	</header>
+	<main>
+		<section id='skala'>
+			<h2>Színskála</h2>
+				<script>szintabla()</script>
+		</section>
+		<section id='keveres'>
+			<h2>Színkeverés</h2>
+			<div id='szinminta'>
+			</div>
+			<div id='szinkeveres'>
+				<div class='csuszka red'>
+					<input id='r' type="range" min="0" max="255" value="200" onChange='szinkever()'>
+					<p>RED</p>
+				</div>
+				<div class='csuszka green'>
+					<input id='g' type="range" min="0" max="255" value="200" onChange='szinkever()'>
+					<p>GREEN</p>
+				</div>
+				<div class='csuszka blue'>
+					<input id='b' type="range" min="0" max="255" value="200" onChange='szinkever()'>
+					<p>BLUE</p>
+				</div>
+			</div>
+			<script>szinkever()</script>
+		</section>
+	</main>
+	<footer>
+		<div id='design'>design and programming by <a href='https://nytta.hu' target='_blank'>Nytta</a> 2022.</div>
+	</footer>
+</body>
+</html>
