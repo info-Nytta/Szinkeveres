@@ -1,23 +1,25 @@
 html {
-	background-color:gray }
+	background-color:#eee }
 body { 
 	box-sizing:border-box;
 	max-width:1000px;
-	margin:auto;
-	background-color:white;
-	padding: 10px;}
+	margin:auto;}
 h1, h2, h3 {
 	text-align:center }
 section {
-	margin:50px auto }
-table#szinskala { 
+	margin:30px auto }
+div#szinskala table{ 
 	margin:auto;
-	border-collapse: collapse}
-table#szinskala td {
-	width:15px;
-	height:15px }
+	border-collapse: collapse;
+	border:1px black solid;}
+div#szinskala table td {
+	width:5px;
+	height:1px;}
+div#szinskala table td:hover {
+	cursor: pointer; }
 div#szinminta {
 	border-radius: 10px;
+	border: 1px black solid;
 	height:100px;
 	width:300px;
 	margin:30px auto;

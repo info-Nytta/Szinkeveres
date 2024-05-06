@@ -6,20 +6,21 @@ function szinvalt(r,g,b) {
 }
 function szintabla() {
 	function szincella(r,g,b) {
-		document.write( "<td "+
+		return "<td "+
 			"style='background-color:rgb("+r+","+g+","+b+")' "+
 			"title='("+r+","+g+","+b+")' "+
-			"onClick='szinvalt("+r+","+g+","+b+")'></td>" )
+			"onClick='szinvalt("+r+","+g+","+b+")'></td>"
 	}
-	document.write("<table id='szinskala'>");
-	for( i=0; i<16; i++ )	{
-		document.write( "<tr>" )
-		for( j=0; j<16; j++ ) szincella(j*16,i*16,0);
-		for( j=0; j<16; j++ ) szincella(255,i*16,j*16);
-		for( j=0; j<16; j++ ) szincella(255-j*16,i*16,255);		
-		document.write( "</tr>" )
+	let out="<table>";
+	for( i=0; i<255; i=i+2 )	{
+		out+= "<tr>";
+		for( j=0; j<255; j=j+2 ) out+=szincella(j,i,0);
+		for( j=0; j<255; j=j+2 ) out+=szincella(255,i,j);
+		for( j=0; j<255; j=j+2 ) out+=szincella(255-j,i,255);		
+		out+="</tr>"
 	}
-	document.write("</table>")
+	out+="</table>";
+	document.getElementById('szinskala').innerHTML=out;
 }
 function atvalt(dec) {
 	let hex=parseInt(dec).toString(16);
@@ -27,11 +28,22 @@ function atvalt(dec) {
 	return hex
 }
 function szinkever() {
-	let r=document.getElementById('r').value;
-	let g=document.getElementById('g').value;
-	let b=document.getElementById('b').value;
-	document.getElementById('szinminta').innerHTML=""+
+	var r=document.getElementById('r').value;
+	var g=document.getElementById('g').value;
+	var b=document.getElementById('b').value;
+	let minta=document.getElementById('szinminta');
+	minta.innerHTML=""+
 		"<p>RGB: ("+r+","+g+","+b+")</p>"+
 		"<p>HEX: #"+atvalt(r)+atvalt(g)+atvalt(b)+"</p>";
-	document.getElementById('szinminta').style.backgroundColor="rgb("+r+","+g+","+b+")"
+	minta.style.backgroundColor="rgb("+r+","+g+","+b+")";
+	if (g<150)
+		minta.style.color="rgb(255,255,255)";
+	else 
+		minta.style.color="rgb(0,0,0)";
 }
+
+szintabla();
+szinkever();
+document.getElementById('r').addEventListener('input', szinkever);
+document.getElementById('g').addEventListener('input', szinkever);
+document.getElementById('b').addEventListener('input', szinkever);

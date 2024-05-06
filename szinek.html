@@ -4,9 +4,10 @@
 	<meta lang='hu-hu' charset='utf-8' />
 	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 	<link rel='stylesheet' href='szinek.css' />
-	<script type='text/javascript' src='szinek.js'></script>
 	<title>Színek</title>
-	<style>#design{font-size:80%;text-align:center;font-style:italic;font-family:Serif;margin:25px auto}</style>
+	<style>
+		#design{font-size:80%;text-align:center;font-style:italic;font-family:Serif;margin:25px auto}
+	</style>
 </head>
 <body>
 	<header>
@@ -15,7 +16,8 @@
 	<main>
 		<section id='skala'>
 			<h2>Színskála</h2>
-				<script>szintabla()</script>
+			<div id="szinskala">
+			</div>
 		</section>
 		<section id='keveres'>
 			<h2>Színkeverés</h2>
@@ -23,23 +25,23 @@
 			</div>
 			<div id='szinkeveres'>
 				<div class='csuszka red'>
-					<input id='r' type="range" min="0" max="255" value="200" onChange='szinkever()'>
+					<input type="range" id='r' min="0" max="255" value="200" step="1">
 					<p>RED</p>
 				</div>
 				<div class='csuszka green'>
-					<input id='g' type="range" min="0" max="255" value="200" onChange='szinkever()'>
+					<input id='g' type="range" min="0" max="255" value="200" step="1">
 					<p>GREEN</p>
 				</div>
 				<div class='csuszka blue'>
-					<input id='b' type="range" min="0" max="255" value="200" onChange='szinkever()'>
+					<input id='b' type="range" min="0" max="255" value="200" step="1">
 					<p>BLUE</p>
 				</div>
 			</div>
-			<script>szinkever()</script>
 		</section>
+		<script type='text/javascript' src='szinek.js'></script>
 	</main>
 	<footer>
-		<div id='design'>design and programming by <a href='https://nytta.hu' target='_blank'>Nytta</a> 2022.</div>
+		<div id='design'>by Nytta</div>
 	</footer>
 </body>
 </html>
